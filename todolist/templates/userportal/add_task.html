@@ -1,0 +1,40 @@
+{% extends 'userportal/base2.html' %}
+{% block container %}
+
+		<section class="section-1">
+			<h1>WELCOME</h1>
+			<p><div class = 'card'>
+        <div class='card-header'>
+            <h5 class = "class-title">Add New Task</h5>
+        </div>
+        <div class='card-body'>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success">create</button>
+            </form>
+        </div>
+    </div></p>
+		</section>
+	</div>
+
+</body>
+</html>
+{% endblock %}
+
+
+{% comment %} {% extends 'userportal/base1.html' %}
+{% block container %}
+<div class = 'card'>
+    <div class='card-header'>
+        <h5 class = "class-title">Add New Task</h5>
+    </div>
+    <div class='card-body'>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-success">create</button>
+        </form>
+    </div>
+</div>
+{% endblock %} {% endcomment %}

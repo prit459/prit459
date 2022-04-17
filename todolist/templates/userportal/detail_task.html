@@ -1,0 +1,17 @@
+{% extends 'userportal/base1.html' %}
+{% block container %}
+<div class = 'card'>
+    <div class='card-header'>
+        <h5 class = "class-title">Task Details #{{task.id}}</h5>
+    </div>
+    <div class='card-body'>
+    <dl class='raw'>
+        <dt class='col-sm-3'>Task Name</dt>
+        <dd class='col-sm-9'>{{ task.task_name}}</dd>
+        
+        <dt class='col-sm-3'>Task Description</dt>
+        <dd class='col-sm-9'>{{ task.task_description}}</dd>
+    </dl>
+    </div>
+</div>
+{% endblock %}

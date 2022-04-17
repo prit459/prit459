@@ -1,0 +1,53 @@
+{% extends 'userportal/base2.html' %}
+{% block container %}
+<table class='table'>
+    <tr>
+        <thead class = 'thead-light'>
+            <tr>
+                <th scope='col'>ID</th>
+                <th scope='col'>Task_Name</th>
+                <th scope='col'>Description</th>
+                <th scope='col'>Priority</th>
+                <th scope='col'>Date</th>
+
+                <th scope='col'>Status</th>
+                <th scope='col'>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td><a href="{% url 'user_urls:detail_task' task.pk %}">{{task.id}}</a></td>
+                <td>{{task.task_name}}</td>
+                <td>{{task.task_description}}</td>
+                <td>{{task.priority}}</td>
+                <td>{{task.Date}}</td>
+                <td>
+                    {% if task.status == 'C'%}
+                    ✅
+                    {%else%}
+                    🕒
+                    {%endif%}
+                </td>
+
+                
+
+
+                <td>
+                    <!-- <a class="btn btn-danger" href = "{% url 'user_urls:delete_task' task.pk %}">Delete</a> -->
+                    <a  href = "{% url 'user_urls:delete_task' task.pk %}" title="Delete">🗑️</a>
+                    <a  href = "{% url 'user_urls:update_task' task.pk %}" title="Update_task">✏️</a>
+                    {% if task.status == 'P' %}
+                    <a  href ="/user/change-status/{{task.id}}/C" title="Mark-Completed">✅</a>
+                    {% else %}
+                    <a  href ="/user/change-status/{{task.id}}/P" title="Mark-Pending">🕘</a>
+                    {% endif %}
+                    
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+{% endblock %}

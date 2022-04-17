@@ -1,0 +1,15 @@
+{% extends 'userportal/base1.html' %}
+{% block container %}
+<div class = 'card'>
+    <div class='card-header'>
+        <h5 class = "class-title">Update Task</h5>
+    </div>
+    <div class='card-body'>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary">update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

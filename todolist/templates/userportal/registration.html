@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="/static/assets/css/signup.css">
+         
+    <!--<title>Login & Registration Form</title>-->
+</head>
+<body>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form signup">
+                <span class="title">Registration</span>
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        {{form.username}}
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        {{form.email}}
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        {{form.password}}
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        {{form.phone_number}}
+                        <i class="uil uil-phone"></i>
+                        <!-- <i class="uil uil-eye-slash showHidePw"></i> -->
+                    </div>
+                    <div class="checkbox-text">
+                        <!-- <div class="checkbox-content">
+                            <input type="checkbox" id="sigCheck">
+                            <label for="sigCheck" class="text">Remember me</label>
+                        </div> -->
+                        
+                        <!-- <a href="#" class="text">Forgot password?</a> -->
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="register">
+                        <button>Submit</button>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already member?
+                        <a href="{% url 'user_urls:userlogin' %}" class="text login-link">Login now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/assets/js/signup.js"></script>
+       <script>
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder='Username';
+        form_fields[2].placeholder='email';
+        form_fields[3].placeholder='password';
+        form_fields[4].placeholder='Phone number';
+        
+        </script>
+
+</body>
+</html>

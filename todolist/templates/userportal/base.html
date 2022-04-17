@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Todo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animated.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    
+   {% block head %}{% endblock head %}
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- Pre-header Starts -->
+  <div class="pre-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8 col-7">
+          <ul class="info">
+            <li><a href="#"><i class="fa fa-envelope"></i>contacttodo@gamil.com</a></li>
+            {% comment %} <li><a href="#"><i class="fa fa-phone"></i>010-020-0340</a></li> {% endcomment %}
+          </ul>
+        </div>
+        {% comment %} <div class="col-lg-4 col-sm-4 col-5">
+          <ul class="social-media">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+          </ul>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </div>
+  <!-- Pre-header End -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo-v1.png" alt="">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="">Features</a></li>
+              <li class="scroll-to-section"><a href="#about">About Us</a></li>
+              <li class="scroll-to-section"><a href="{% url 'user_urls:contact' %}">Contact Us</a></li>
+              <li class="scroll-to-section"><a href="{% url 'user_urls:userlogin' %}">Login</a></li> 
+              <li class="scroll-to-section"><div class="border-first-button"><a href="{% url 'user_urls:userregistration' %}">Create An Account</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  {% block custom_css %}{% endblock  %}
+   {% block body_block %}{% endblock  %}
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'assets/js/animation.js' %}"></script>
+  <script src="{% static 'assets/js/imagesloaded.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+   
+  {% block scripts %} {% endblock %}
+
+
+</body>
+
+</html> 
